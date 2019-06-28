@@ -11,9 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 public class GithubController {
 
     @PostMapping("/trigger")
-    public String githubTrigger(HttpServletRequest request) {
+    public void githubTrigger(HttpServletRequest request) {
         log.info("github触发器来了");
-        // log.info(JSONObject.toJSONString(request));
-        return "ojbk";
+        System.out.println(request.toString());
     }
 }
