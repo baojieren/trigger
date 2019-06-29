@@ -11,7 +11,7 @@ public class GithubController {
     @PostMapping("/trigger")
     public void githubTrigger() {
         log.info("Github触发器来了");
-        String shellPath = "/baojie/gitbook/docs/gitbook.sh";
+        String shellPath = "/baojie/gitbook/gitbook.sh";
         try {
             int result = Runtime.getRuntime().exec(shellPath).waitFor();
             // BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream()));
