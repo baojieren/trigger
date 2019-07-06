@@ -1,14 +1,16 @@
 package ink.baojie.web;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@Slf4j
 public class GithubController {
 
     @PostMapping("/trigger")
     public void githubTrigger() {
-        System.out.println("Github触发器来了");
+        log.info("Github触发器来了");
         String shellPath = "/baojie/gitbook/gitbook.sh";
         try {
             Process process = Runtime.getRuntime().exec(shellPath);
@@ -20,9 +22,10 @@ public class GithubController {
             //     sb.append(line).append("\n");
             // }
             // System.out.println("执行脚本日志: " + sb.toString());
-            System.out.println("执行脚本结果: " + result);
+            log.info("执行脚本结果:{}", result);
         } catch (Exception e) {
-            System.out.println("执行脚本出错了");
+            log.info("执行脚本出错了");
+            System.out.println("");
             e.printStackTrace();
         }
     }
