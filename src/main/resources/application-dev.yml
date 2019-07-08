@@ -1,4 +1,16 @@
 server:
-  port: 8085
+  port: 8086
   servlet:
     context-path: /github
+spring:
+  application:
+    name: github-trigger
+  boot:
+    admin:
+      client:
+        url: http://47.100.253.25:8080
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
