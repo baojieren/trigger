@@ -19,21 +19,10 @@ repositories {
     mavenCentral()
 }
 
-ext {
-    set('springBootAdminVersion', "2.1.0")
-}
-
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    implementation 'de.codecentric:spring-boot-admin-starter-client'
 //    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.58'
-}
-
-dependencyManagement {
-    imports {
-        mavenBom "de.codecentric:spring-boot-admin-dependencies:${springBootAdminVersion}"
-    }
 }
